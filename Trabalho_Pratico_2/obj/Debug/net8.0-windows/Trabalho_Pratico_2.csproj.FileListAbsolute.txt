@@ -1,0 +1,34 @@
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Trabalho_Pratico_2.exe
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Trabalho_Pratico_2.deps.json
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Trabalho_Pratico_2.runtimeconfig.json
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Trabalho_Pratico_2.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Trabalho_Pratico_2.pdb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\MonoGame.Framework.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.Direct2D1.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.Direct3D11.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.Direct3D9.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.DXGI.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.Mathematics.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.MediaFoundation.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.XAudio2.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\SharpDX.XInput.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.csproj.AssemblyReference.cache
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.GeneratedMSBuildEditorConfig.editorconfig
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.AssemblyInfoInputs.cache
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.AssemblyInfo.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.csproj.CoreCompileInputs.cache
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho.5503ADF6.Up2Date
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\refint\Trabalho_Pratico_2.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.pdb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\Trabalho_Pratico_2.genruntimeconfig.cache
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\ref\Trabalho_Pratico_2.dll
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly walking.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\background.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly attack 1.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly attack 2.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly attack 3.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly jump.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho Pratcio 2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\slime enemy.xnb
