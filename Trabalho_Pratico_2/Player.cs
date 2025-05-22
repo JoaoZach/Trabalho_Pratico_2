@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Trabalho_Pratico_2
 {
@@ -10,7 +11,7 @@ namespace Trabalho_Pratico_2
         public Vector2 Velocity;
         private float speed = 8f;
         private float gravity = 0.5f;
-        private float jumpStrength = -12f;
+        private float jumpStrength = -16f;
         private bool isOnGround = false;
         private bool isJumping = false;
         private bool facingRight = true;
@@ -19,12 +20,14 @@ namespace Trabalho_Pratico_2
         private Texture2D idleTexture;
         private Texture2D walkTexture;
         private Texture2D jumpTexture;
+        private Texture2D attackTexture;
         private Texture2D currentTexture;
 
         private AnimationManager animationManager;
         private Animation walkAnimation;
         private Animation idleAnimation;
         private Animation jumpAnimation;
+        private Animation attackAnimation;
 
         public Rectangle Hitbox { get; private set; }
 
@@ -33,22 +36,32 @@ namespace Trabalho_Pratico_2
         private int health;
         private bool isDamaged = false;
         private double damageTimer = 0;
-        private double damageDuration = 500; // ms
+        private double damageDuration = 500;
 
         private Vector2 knockbackVelocity = Vector2.Zero;
         private float knockbackFriction = 0.9f;
 
-        public Player(Texture2D idle, Texture2D walk, Texture2D jump,
-                      Animation idleAnim, Animation walkAnim, Animation jumpAnim,
+        public Rectangle AttackHitbox { get; private set; } = Rectangle.Empty;
+        private int attackWidth = 100;
+        private int attackHeight = 150;
+
+        private bool isAttacking = false;
+        private double attackTimer = 0;
+        private double attackDuration = 600; // ms
+
+        public Player(Texture2D idle, Texture2D walk, Texture2D jump, Texture2D attack,
+                      Animation idleAnim, Animation walkAnim, Animation jumpAnim, Animation attackAnim,
                       int groundY, Vector2 startPosition)
         {
             idleTexture = idle;
             walkTexture = walk;
             jumpTexture = jump;
+            attackTexture = attack;
 
             idleAnimation = idleAnim;
             walkAnimation = walkAnim;
             jumpAnimation = jumpAnim;
+            attackAnimation = attackAnim;
 
             animationManager = new AnimationManager(idleAnimation);
             currentTexture = idleTexture;
@@ -56,7 +69,7 @@ namespace Trabalho_Pratico_2
             Position = startPosition;
             groundLevel = groundY;
 
-            health = maxHealth; // inicializa vida como vida máxima
+            health = maxHealth;
         }
 
         public void Update(GameTime gameTime, KeyboardState keyboardState)
@@ -70,93 +83,100 @@ namespace Trabalho_Pratico_2
 
             bool jumpPressed = keyboardState.IsKeyDown(Keys.Space);
 
-            if (jumpPressed && isOnGround)
-            {
-                Velocity.Y = jumpStrength;
-                isOnGround = false;
-                isJumping = true;
-
-                animationManager.SetAnimation(jumpAnimation);
-                currentTexture = jumpTexture;
-            }
-
-            Velocity.Y += gravity;
-            Position.Y += Velocity.Y;
-
+            // Movimento sempre permitido
             if (input != Vector2.Zero)
             {
                 Position += Vector2.Normalize(input) * speed;
                 facingRight = input.X > 0;
             }
 
+            // Início do ataque
+            if (!isAttacking && keyboardState.IsKeyDown(Keys.Z))
+            {
+                isAttacking = true;
+                attackTimer = 0;
+                animationManager.SetAnimation(attackAnimation);
+                currentTexture = attackTexture;
+            }
+
+            // Executando ataque
+            if (isAttacking)
+            {
+                attackTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
+                int spriteWidth = 300;
+                int attackX = facingRight ? (int)(Position.X + spriteWidth -100) : (int)(Position.X - attackWidth +100);
+                int attackY = (int)Position.Y + 100;
+                AttackHitbox = new Rectangle(attackX, attackY, attackWidth, attackHeight);
+                animationManager.Update(new GameTime(gameTime.TotalGameTime, TimeSpan.FromMilliseconds(gameTime.ElapsedGameTime.TotalMilliseconds * 1.5)));
+
+
+                if (attackTimer >= attackDuration || animationManager.HasFinished())
+                {
+                    isAttacking = false;
+                    AttackHitbox = Rectangle.Empty;
+                    animationManager.Update(gameTime);
+                }
+            }
+            else
+            {
+                AttackHitbox = Rectangle.Empty;
+
+                if (jumpPressed && isOnGround)
+                {
+                    Velocity.Y = jumpStrength;
+                    isOnGround = false;
+                    isJumping = true;
+
+                    animationManager.SetAnimation(jumpAnimation);
+                    currentTexture = jumpTexture;
+                }
+            }
+
+            Velocity.Y += gravity;
+            Position.Y += Velocity.Y;
+
             if (Position.Y + 150 >= groundLevel)
             {
                 Position.Y = groundLevel - 150;
                 Velocity.Y = 0;
-
-                if (!isOnGround)
-                {
-                    isOnGround = true;
-                    isJumping = false;
-                }
+                isOnGround = true;
+                isJumping = false;
             }
             else
             {
                 isOnGround = false;
             }
 
-            // Animation logic
-            if (isJumping)
+            if (!isAttacking)
             {
-                if (animationManager.HasFinished())
+                if (isJumping)
                 {
-                    isJumping = false;
-                    if (input != Vector2.Zero)
+                    if (animationManager.HasFinished())
                     {
-                        animationManager.SetAnimation(walkAnimation);
-                        currentTexture = walkTexture;
+                        isJumping = false;
+                        animationManager.SetAnimation(input != Vector2.Zero ? walkAnimation : idleAnimation);
+                        currentTexture = input != Vector2.Zero ? walkTexture : idleTexture;
                     }
-                    else
-                    {
-                        animationManager.SetAnimation(idleAnimation);
-                        currentTexture = idleTexture;
-                    }
-                }
-            }
-            else
-            {
-                if (input != Vector2.Zero)
-                {
-                    animationManager.SetAnimation(walkAnimation);
-                    currentTexture = walkTexture;
                 }
                 else
                 {
-                    animationManager.SetAnimation(idleAnimation);
-                    currentTexture = idleTexture;
+                    animationManager.SetAnimation(input != Vector2.Zero ? walkAnimation : idleAnimation);
+                    currentTexture = input != Vector2.Zero ? walkTexture : idleTexture;
                 }
             }
 
             animationManager.Update(gameTime);
 
-            // Atualiza hitbox (centralizada)
-            int spriteWidth = 300;
-            int spriteHeight = 300;
+            int spriteW = 300;
+            int spriteH = 300;
+            int hitboxW = 120;
+            int hitboxH = 180;
 
-            int hitboxWidth = 120;
-            int hitboxHeight = 180;
+            int centerX = (int)Position.X + spriteW / 2;
+            int centerY = (int)Position.Y + spriteH / 2;
 
-            int centerX = (int)Position.X + spriteWidth / 2;
-            int centerY = (int)Position.Y + spriteHeight / 2;
+            Hitbox = new Rectangle(centerX - hitboxW / 2, centerY - hitboxH / 2, hitboxW, hitboxH);
 
-            Hitbox = new Rectangle(
-                centerX - hitboxWidth / 2,
-                centerY - hitboxHeight / 2,
-                hitboxWidth,
-                hitboxHeight
-            );
-
-            // Atualiza temporizador de dano
             if (isDamaged)
             {
                 damageTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -167,60 +187,41 @@ namespace Trabalho_Pratico_2
                 }
             }
 
-            // Aplica knockback
             Position += knockbackVelocity;
             knockbackVelocity *= knockbackFriction;
-
             if (knockbackVelocity.Length() < 0.1f)
                 knockbackVelocity = Vector2.Zero;
         }
 
         public void TakeDamage(Vector2 attackerPosition, float force)
         {
-            if (isDamaged) return; // Invencibilidade curta após dano
+            if (isDamaged) return;
 
             health--;
-            if (health < 0) health = 0; // não deixa vida negativa
-
-            if (health <= 0)
-            {
-                // Aqui você pode tratar a morte do player, reiniciar, etc.
-            }
+            if (health < 0) health = 0;
 
             isDamaged = true;
             damageTimer = 0;
 
             Vector2 direction = Position - attackerPosition;
-
-            if (direction == Vector2.Zero)
+            if (direction.LengthSquared() < 0.01f)
             {
                 direction = new Vector2(facingRight ? 1 : -1, 0);
             }
             else
             {
                 direction.Normalize();
-
-                // Garante que o knockback sempre empurre o player para frente
-                if (direction.X * (facingRight ? 1 : -1) < 0)
-                {
-                    direction.X = -direction.X;
-                }
             }
 
+            if (direction.Y > 0) direction.Y = 0;
             knockbackVelocity = direction * force;
         }
 
-        public void Draw(SpriteBatch spriteBatch, SpriteEffects effects)
+        public void Draw(SpriteBatch spriteBatch, SpriteEffects effects, Texture2D pixel)
         {
-            Color drawColor = Color.White;
-
-            if (isDamaged)
-            {
-                // Piscar: muda cor entre transparente e branca a cada 100ms
-                int blinkFrequency = 100; // ms
-                int time = (int)(damageTimer / blinkFrequency);
-                drawColor = (time % 2 == 0) ? Color.White : Color.Transparent;
-            }
+            Color drawColor = isDamaged && (int)(damageTimer / 100) % 2 == 1
+                ? Color.Transparent
+                : Color.White;
 
             spriteBatch.Draw(
                 currentTexture,
@@ -232,6 +233,13 @@ namespace Trabalho_Pratico_2
                 effects,
                 0f
             );
+
+            spriteBatch.Draw(pixel, Hitbox, Color.Blue * 0.4f);
+
+            if (AttackHitbox != Rectangle.Empty)
+            {
+                spriteBatch.Draw(pixel, AttackHitbox, Color.Red * 0.5f);
+            }
         }
 
         public bool FacingRight => facingRight;

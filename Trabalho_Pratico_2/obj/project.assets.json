@@ -4212,11 +4212,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\IPCA 2024-2025\\1º Ano\\2º Semestre\\02 - Técnicas de Desenvolvimento de Videojogos\\Trabalho Pratcio 2\\Trabalho_Pratico_2\\Trabalho_Pratico_2.csproj",
+      "projectUniqueName": "C:\\Users\\João.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Trabalho_Pratico_2.csproj",
       "projectName": "Trabalho_Pratico_2",
-      "projectPath": "E:\\IPCA 2024-2025\\1º Ano\\2º Semestre\\02 - Técnicas de Desenvolvimento de Videojogos\\Trabalho Pratcio 2\\Trabalho_Pratico_2\\Trabalho_Pratico_2.csproj",
+      "projectPath": "C:\\Users\\João.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Trabalho_Pratico_2.csproj",
       "packagesPath": "C:\\Users\\João.DESKTOP-54ERBDK\\.nuget\\packages\\",
-      "outputPath": "E:\\IPCA 2024-2025\\1º Ano\\2º Semestre\\02 - Técnicas de Desenvolvimento de Videojogos\\Trabalho Pratcio 2\\Trabalho_Pratico_2\\obj\\",
+      "outputPath": "C:\\Users\\João.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

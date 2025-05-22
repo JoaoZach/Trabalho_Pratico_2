@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho Pratcio 2/Trabalho_Pratico_2/Content/background.jpg</SourceFile>
+  <SourceFile>C:/Users/João.DESKTOP-54ERBDK/Desktop/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/background.jpg</SourceFile>
   <SourceTime>2025-05-14T15:01:05.6819318+01:00</SourceTime>
-  <DestFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho Pratcio 2/Trabalho_Pratico_2/Content/bin/Windows/Content/background.xnb</DestFile>
-  <DestTime>2025-05-15T16:20:33.0332839+01:00</DestTime>
+  <DestFile>C:/Users/João.DESKTOP-54ERBDK/Desktop/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/bin/Windows/Content/background.xnb</DestFile>
+  <DestTime>2025-05-22T09:50:47.1972674+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-04-05T11:10:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

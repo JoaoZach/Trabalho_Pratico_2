@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "83pJfUmZ9cE=",
+  "dgSpecHash": "/tZKSjrfcDc=",
   "success": true,
-  "projectFilePath": "E:\\IPCA 2024-2025\\1º Ano\\2º Semestre\\02 - Técnicas de Desenvolvimento de Videojogos\\Trabalho Pratcio 2\\Trabalho_Pratico_2\\Trabalho_Pratico_2.csproj",
+  "projectFilePath": "C:\\Users\\João.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Trabalho_Pratico_2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\João.DESKTOP-54ERBDK\\.nuget\\packages\\microsoft.netcore.app\\2.1.30\\microsoft.netcore.app.2.1.30.nupkg.sha512",
     "C:\\Users\\João.DESKTOP-54ERBDK\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.30\\microsoft.netcore.dotnetapphost.2.1.30.nupkg.sha512",
