@@ -25,15 +25,14 @@ namespace Trabalho_Pratico_2
         private int worldWidth = 1280 * 2;
         private int worldHeight = 3200;
 
-        private List<int> floorLevels = new List<int> { 3050, 2150, 900, 300, -300, -900 };
+        private List<int> floorLevels = new List<int> { 3050, 2150, 1200 };
 
         private List<Platform> platforms = new List<Platform>();
         private List<Elevator> elevators = new List<Elevator>();
 
-        private Enemy slimeEnemy;
         private Texture2D slimeTexture;
         private Animation slimeAnimation;
-        private Elevator elevator;
+        private List<Enemy> enemies = new List<Enemy>();
 
         public Game1()
         {
@@ -70,19 +69,25 @@ namespace Trabalho_Pratico_2
             Vector2 elevatorSize = new Vector2(200, 20);
             int elevatorMargin = 50;
 
-            foreach (int floorY in floorLevels)
+            for (int i = 0; i < 2; i++) // Só cria os dois primeiros elevadores
             {
-                float x = worldWidth - elevatorSize.X - elevatorMargin;
+                int floorY = floorLevels[i];
                 float y = floorY - elevatorSize.Y;
+
+                float x = (i == 1)
+                    ? elevatorMargin                         // segundo elevador: início da sala (esquerda)
+                    : worldWidth - elevatorSize.X - elevatorMargin; // primeiro elevador: fundo da sala (direita)
 
                 elevators.Add(new Elevator(
                     new Vector2(x, y),
                     elevatorSize,
                     2f,
-                    y - 800, // upper limit (100px above)
-                    y + 50  // lower limit (100px below)
+                    y - 800,
+                    y + 50
                 ));
             }
+
+
 
             foreach (int y in floorLevels)
             {
@@ -100,10 +105,20 @@ namespace Trabalho_Pratico_2
             slimeAnimation = new Animation(20, 5, frameSize2);
 
             player = new Player(skellyIdleTexture, skellyWalkTexture, skellyJumpTexture, skellyAttackTexture,
-                                idleAnimation, walkAnimation, jumpAnimation, attackAnimation,
-                                groundLevel, new Vector2(300, 2600));
+                idleAnimation, walkAnimation, jumpAnimation, attackAnimation,
+                groundLevel, new Vector2(300, 2600));
 
-            slimeEnemy = new Enemy(slimeTexture, new Vector2(800, 0), slimeAnimation);
+            // Adiciona inimigos distribuídos em vários andares
+            foreach (int floorY in floorLevels)
+            {
+                float enemyY = floorY - 500; // 500 é a altura da sprite do inimigo
+                for (int i = 0; i < 3; i++)
+                {
+                    float enemyX = 300 + i * 500; // Distribui horizontalmente
+                    enemies.Add(new Enemy(slimeTexture, new Vector2(enemyX, enemyY), slimeAnimation, floorY, platforms));
+                }
+            }
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -119,16 +134,19 @@ namespace Trabalho_Pratico_2
                 cameraFollowSpeed
             );
 
-            slimeEnemy.Update(gameTime, player.Position);
-
-            if (slimeEnemy.IsAlive && slimeEnemy.Hitbox.Intersects(player.Hitbox))
+            foreach (var enemy in enemies.ToList())
             {
-                player.TakeDamage(slimeEnemy.Position, 50f);
-            }
+                enemy.Update(gameTime, player.Position);
 
-            if (slimeEnemy.IsAlive && player.AttackHitbox.Intersects(slimeEnemy.Hitbox))
-            {
-                slimeEnemy.TakeDamage(player.Position, 12f);
+                if (enemy.IsAlive && enemy.Hitbox.Intersects(player.Hitbox))
+                {
+                    player.TakeDamage(enemy.Position, 50f);
+                }
+
+                if (enemy.IsAlive && player.AttackHitbox.Intersects(enemy.Hitbox))
+                {
+                    enemy.TakeDamage(player.Position, 30f);
+                }
             }
 
             player.Position = new Vector2(
@@ -141,11 +159,9 @@ namespace Trabalho_Pratico_2
                 elev.Update(gameTime);
             }
 
-            // Usa o elevador atual sob o jogador para colisão
             Elevator currentElevator = elevators.FirstOrDefault(e => player.Hitbox.Bottom >= e.Position.Y && player.Hitbox.Intersects(e.Hitbox));
 
             player.Update(gameTime, keyboardState, currentElevator, floorLevels, platforms);
-
 
             base.Update(gameTime);
         }
@@ -159,11 +175,10 @@ namespace Trabalho_Pratico_2
             _spriteBatch.Begin(transformMatrix: transform, samplerState: SamplerState.PointClamp);
 
             _spriteBatch.Draw(
-                 backgroundTexture,
-                 new Rectangle(0, 0, worldWidth, worldHeight), // estica a imagem
-                 Color.White
-             );
-
+                backgroundTexture,
+                new Rectangle(0, 0, worldWidth, worldHeight),
+                Color.White
+            );
 
             foreach (var platform in platforms)
             {
@@ -176,7 +191,11 @@ namespace Trabalho_Pratico_2
             }
 
             player.Draw(_spriteBatch, player.FacingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally, pixel);
-            slimeEnemy.Draw(_spriteBatch, pixel);
+
+            foreach (var enemy in enemies)
+            {
+                enemy.Draw(_spriteBatch, pixel);
+            }
 
             _spriteBatch.End();
 

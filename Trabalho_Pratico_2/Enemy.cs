@@ -1,5 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Trabalho_Pratico_2
 {
@@ -12,30 +15,35 @@ namespace Trabalho_Pratico_2
         public Rectangle Hitbox;
         public bool IsAlive = true;
 
-        private float velocityY = 0f;
         private float gravity = 0.5f;
-        private int groundLevel = 800;
+        private float verticalVelocity = 0f;
+        private int verticalOffset = 160;
 
-        private bool isDamaged = false;
-        private double damageTimer = 0;
-        private double damageDuration = 500; // ms
-        private Color baseColor = Color.White;
-
+        private int groundLevel;
         private SpriteEffects spriteEffect = SpriteEffects.None;
+        private const int spriteSize = 500;
 
-        private const int spriteSize = 500; // tamanho do sprite do inimigo
+        private int direction = 1; // 1 = direita, -1 = esquerda
+        private float moveSpeed = 1.2f;
 
         private int health = 2;
         private Vector2 knockbackVelocity = Vector2.Zero;
-        private float knockbackFriction = 0.9f; // controle da desaceleração do knockback
+        private float knockbackFriction = 0.9f;
 
-        private float verticalVelocity = 0f;
+        private bool isDamaged = false;
+        private double damageTimer = 0;
+        private double damageDuration = 500;
+        private Color baseColor = Color.White;
 
-        public Enemy(Texture2D texture, Vector2 position, Animation animation)
+        private List<Platform> platforms;
+
+        public Enemy(Texture2D texture, Vector2 position, Animation animation, int groundLevel, List<Platform> platforms)
         {
             Texture = texture;
             Position = position;
             this.animation = animation;
+            this.groundLevel = groundLevel;
+            this.platforms = platforms;
             animationManager = new AnimationManager(animation);
             UpdateHitbox();
         }
@@ -48,30 +56,40 @@ namespace Trabalho_Pratico_2
             verticalVelocity += gravity;
             Position.Y += verticalVelocity;
 
-            if (Position.Y + spriteSize >= groundLevel)
+            if (Position.Y + spriteSize - verticalOffset >= groundLevel)
             {
-                Position.Y = groundLevel - spriteSize;
+                Position.Y = groundLevel - spriteSize + verticalOffset;
                 verticalVelocity = 0f;
             }
 
-            // Movimento em direção ao player
-            float speed = 1.2f;
-            if (playerPosition.X < Position.X)
+            // Movimento automático com verificação de colisão lateral
+            Vector2 nextPosition = Position;
+            nextPosition.X += direction * moveSpeed;
+
+            Rectangle futureHitbox = new Rectangle(
+                (int)nextPosition.X + spriteSize / 2 - Hitbox.Width / 2,
+                (int)Position.Y + spriteSize / 2 - Hitbox.Height / 2,
+                Hitbox.Width,
+                Hitbox.Height
+            );
+
+            bool collided = platforms.Any(p => p.LeftWall.Intersects(futureHitbox) || p.RightWall.Intersects(futureHitbox));
+            if (collided)
             {
-                Position.X -= speed;
-                spriteEffect = SpriteEffects.None; // Olha para a esquerda
+                direction *= -1;
             }
-            else if (playerPosition.X > Position.X)
+            else
             {
-                Position.X += speed;
-                spriteEffect = SpriteEffects.FlipHorizontally; // Olha para a direita
+                Position.X += direction * moveSpeed;
             }
 
+
+            spriteEffect = direction == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 
             animationManager.Update(gameTime);
             UpdateHitbox();
 
-            // Temporizador de dano
+            // Dano
             if (isDamaged)
             {
                 damageTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -82,12 +100,12 @@ namespace Trabalho_Pratico_2
                 }
             }
 
+            // Knockback
             Position += knockbackVelocity;
             knockbackVelocity *= knockbackFriction;
 
             if (knockbackVelocity.Length() < 0.1f)
                 knockbackVelocity = Vector2.Zero;
-
         }
 
         private void UpdateHitbox()
@@ -110,7 +128,6 @@ namespace Trabalho_Pratico_2
                 damageTimer = 0;
                 health--;
 
-                // Calcula a direção e aplica knockback com força personalizada
                 Vector2 direction = Position - attackerPosition;
                 direction.Normalize();
                 knockbackVelocity = direction * force;
@@ -121,7 +138,6 @@ namespace Trabalho_Pratico_2
                 }
             }
         }
-
 
         public void Draw(SpriteBatch spriteBatch, Texture2D pixel)
         {
@@ -141,8 +157,7 @@ namespace Trabalho_Pratico_2
                 0f
             );
 
-
-            // Desenhar a hitbox
+            // Hitbox (visual)
             spriteBatch.Draw(pixel, Hitbox, Color.Red * 0.4f);
         }
     }
