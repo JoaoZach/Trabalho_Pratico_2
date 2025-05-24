@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho Pratcio 2/Trabalho_Pratico_2/Content/skelly.png</SourceFile>
-  <SourceTime>2025-05-14T15:48:54.6241478+01:00</SourceTime>
-  <DestFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho Pratcio 2/Trabalho_Pratico_2/Content/bin/Windows/skelly.xnb</DestFile>
-  <DestTime>2025-05-15T12:00:00.322579+01:00</DestTime>
+  <SourceFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/skelly.png</SourceFile>
+  <SourceTime>2025-05-23T15:01:32.3148172+01:00</SourceTime>
+  <DestFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/bin/Windows/skelly.xnb</DestFile>
+  <DestTime>2025-05-23T16:36:33.1473776+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-04-05T11:10:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

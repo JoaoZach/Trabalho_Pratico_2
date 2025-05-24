@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Trabalho_Pratico_2
 {
-    internal class Enemy
+    public class Enemy
     {
         public Vector2 Position;
         private Texture2D Texture;

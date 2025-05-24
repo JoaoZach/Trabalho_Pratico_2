@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\",
+  "WorkspaceRootPath": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|c:\\users\\jo\u00E3o.desktop-54erbdk\\desktop\\trabalho_pratico_2\\trabalho_pratico_2\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|c:\\users\\jo\u00E3o.desktop-54erbdk\\desktop\\trabalho_pratico_2\\trabalho_pratico_2\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|c:\\users\\jo\u00E3o.desktop-54erbdk\\desktop\\trabalho_pratico_2\\trabalho_pratico_2\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|c:\\users\\jo\u00E3o.desktop-54erbdk\\desktop\\trabalho_pratico_2\\trabalho_pratico_2\\content\\skelly attack 1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:content\\skelly attack 1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|c:\\users\\jo\u00E3o.desktop-54erbdk\\desktop\\trabalho_pratico_2\\trabalho_pratico_2\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|c:\\users\\jo\u00E3o.desktop-54erbdk\\desktop\\trabalho_pratico_2\\trabalho_pratico_2\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +42,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "skelly attack 1.png",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Content\\skelly attack 1.png",
-              "RelativeDocumentMoniker": "Content\\skelly attack 1.png",
-              "ToolTip": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Content\\skelly attack 1.png",
-              "RelativeToolTip": "Content\\skelly attack 1.png",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-05-22T13:58:50.829Z",
+              "DocumentIndex": 2,
+              "Title": "Elevator.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Elevator.cs",
+              "RelativeDocumentMoniker": "Elevator.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Elevator.cs",
+              "RelativeToolTip": "Elevator.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAxwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:43:19.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Platform.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Platform.cs",
+              "RelativeDocumentMoniker": "Platform.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Platform.cs",
+              "RelativeToolTip": "Platform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:20:39.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Room.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Room.cs",
+              "RelativeDocumentMoniker": "Room.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Room.cs",
+              "RelativeToolTip": "Room.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:07:03.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Enemy.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Enemy.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAcwIAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAAwJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T10:15:00.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAAwPcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUBAAAAAAAAAAAxwCcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T09:37:23.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Game1.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Game1.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwHwAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAcwLoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T09:33:56.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Animation.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Animation.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Animation.cs",
               "RelativeDocumentMoniker": "Animation.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Animation.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Animation.cs",
               "RelativeToolTip": "Animation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T14:49:54.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T14:49:54.131Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AnimationManager.cs",
-              "DocumentMoniker": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\AnimationManager.cs",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\AnimationManager.cs",
               "RelativeDocumentMoniker": "AnimationManager.cs",
-              "ToolTip": "C:\\Users\\Jo\u00E3o.DESKTOP-54ERBDK\\Desktop\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\AnimationManager.cs",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\AnimationManager.cs",
               "RelativeToolTip": "AnimationManager.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwCIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAIwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T11:12:01.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T11:12:01.677Z"
             }
           ]
         }

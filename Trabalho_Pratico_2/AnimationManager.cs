@@ -14,6 +14,7 @@ namespace Trabalho_Pratico_2
         {
             this.animation = animation;
             currentFrame = 0;
+            timer = 0;
         }
 
         // Propriedade pública para acessar o frame atual
@@ -21,7 +22,11 @@ namespace Trabalho_Pratico_2
 
         public void SetAnimation(Animation newAnimation)
         {
-            if (animation == newAnimation) return;
+            if (newAnimation == null)
+                return;
+
+            if (animation == newAnimation)
+                return;
 
             animation = newAnimation;
             currentFrame = 0;
@@ -30,6 +35,9 @@ namespace Trabalho_Pratico_2
 
         public void Update(GameTime gameTime)
         {
+            if (animation == null)
+                return;
+
             timer += gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (timer > interval)
@@ -37,10 +45,7 @@ namespace Trabalho_Pratico_2
                 currentFrame++;
                 if (currentFrame >= animation.FrameCount)
                 {
-                    if (animation.IsLooping)
-                        currentFrame = 0;
-                    else
-                        currentFrame = animation.FrameCount - 1;
+                    currentFrame = animation.IsLooping ? 0 : animation.FrameCount - 1;
                 }
                 timer = 0;
             }
@@ -48,6 +53,9 @@ namespace Trabalho_Pratico_2
 
         public Rectangle GetFrame()
         {
+            if (animation == null)
+                return Rectangle.Empty;
+
             int width = (int)animation.FrameSize.X;
             int height = (int)animation.FrameSize.Y;
 
@@ -59,6 +67,9 @@ namespace Trabalho_Pratico_2
 
         public bool HasFinished()
         {
+            if (animation == null)
+                return true;
+
             return !animation.IsLooping && currentFrame == animation.FrameCount - 1;
         }
     }
