@@ -11,20 +11,24 @@
       "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\batenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:batenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\slimeboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:slimeboss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\content\\dash.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:content\\dash.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\batenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|solutionrelative:batenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E82A2FC6-3D68-4518-85AF-4076F91A8BE1}|Trabalho_Pratico_2.csproj|e:\\ipca 2024-2025\\1\u00BA ano\\2\u00BA semestre\\02 - t\u00E9cnicas de desenvolvimento de videojogos\\trabalho_pratico_2\\trabalho_pratico_2\\elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +54,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "dash.png",
+              "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Content\\dash.png",
+              "RelativeDocumentMoniker": "Content\\dash.png",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Content\\dash.png",
+              "RelativeToolTip": "Content\\dash.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-05-25T21:27:58.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Enemy.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAcwKkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAKkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T10:15:00.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "SlimeBoss.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\SlimeBoss.cs",
               "RelativeDocumentMoniker": "SlimeBoss.cs",
@@ -80,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "BatEnemy.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\BatEnemy.cs",
               "RelativeDocumentMoniker": "BatEnemy.cs",
@@ -88,8 +104,7 @@
               "RelativeToolTip": "BatEnemy.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAAAuwH0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T08:46:47.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T08:46:47.711Z"
             },
             {
               "$type": "Document",
@@ -99,14 +114,14 @@
               "RelativeDocumentMoniker": "Game1.cs",
               "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAADwv40AAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAB8BAAAAAAAAAAAuwDEBAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T09:33:56.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Elevator.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Elevator.cs",
               "RelativeDocumentMoniker": "Elevator.cs",
@@ -118,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Platform.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Platform.cs",
               "RelativeDocumentMoniker": "Platform.cs",
@@ -131,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Room.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Room.cs",
               "RelativeDocumentMoniker": "Room.cs",
@@ -147,16 +162,16 @@
               "Title": "Player.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs*",
-              "RelativeToolTip": "Player.cs*",
-              "ViewState": "AgIAAEQBAAAAAAAAAADwv1YBAAANAAAAAAAAAA==",
+              "ToolTip": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AgIAAK8BAAAAAAAAAAAywMMBAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T09:37:23.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Animation.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\Animation.cs",
               "RelativeDocumentMoniker": "Animation.cs",
@@ -168,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AnimationManager.cs",
               "DocumentMoniker": "E:\\IPCA 2024-2025\\1\u00BA Ano\\2\u00BA Semestre\\02 - T\u00E9cnicas de Desenvolvimento de Videojogos\\Trabalho_Pratico_2\\Trabalho_Pratico_2\\AnimationManager.cs",
               "RelativeDocumentMoniker": "AnimationManager.cs",

@@ -23,6 +23,7 @@ namespace Trabalho_Pratico_2
         private Texture2D walkTexture;
         private Texture2D jumpTexture;
         private Texture2D attackTexture;
+        private Texture2D dodgeTexture; // Nova textura para esquiva
         private Texture2D currentTexture;
 
         private AnimationManager animationManager;
@@ -30,6 +31,7 @@ namespace Trabalho_Pratico_2
         private Animation idleAnimation;
         private Animation jumpAnimation;
         private Animation attackAnimation;
+        private Animation dodgeAnimation; // Nova animação para esquiva
 
         public Rectangle Hitbox { get; private set; }
 
@@ -49,28 +51,42 @@ namespace Trabalho_Pratico_2
         private double attackTimer = 0;
         private double attackDuration = 600;
 
+        // Variáveis para esquiva
+        private bool isDodging = false;
+        private double dodgeTimer = 0;
+        private double dodgeDuration = 400; // Duração da esquiva em ms
+        private float dodgeSpeed = 15f; // Velocidade da esquiva
+        private Vector2 dodgeDirection = Vector2.Zero;
+        private float dodgeDistance = 200f; // Distância da esquiva
+        private Vector2 dodgeStartPosition;
+        private double dodgeCooldownTimer = 0;
+        private double dodgeCooldown = 1000; // Cooldown de 1 segundo
+
         public int Health => health;
         public int MaxHealth => maxHealth;
         public bool IsDead => health <= 0;
+        public bool IsInvulnerable => isDodging; // Propriedade para verificar invulnerabilidade
 
         private SoundEffect attackSound;
         private SoundEffect jumpSound;
         private SoundEffect hurtSound;
+        private SoundEffect dodgeSound; // Som da esquiva
 
-
-        public Player(Texture2D idle, Texture2D walk, Texture2D jump, Texture2D attack,
-                      Animation idleAnim, Animation walkAnim, Animation jumpAnim, Animation attackAnim,
-                      int groundY, Vector2 startPosition, SoundEffect attackSfx, SoundEffect jumpSfx, SoundEffect hurtSfx)
+        public Player(Texture2D idle, Texture2D walk, Texture2D jump, Texture2D attack, Texture2D dodge,
+                      Animation idleAnim, Animation walkAnim, Animation jumpAnim, Animation attackAnim, Animation dodgeAnim,
+                      int groundY, Vector2 startPosition, SoundEffect attackSfx, SoundEffect jumpSfx, SoundEffect hurtSfx, SoundEffect dodgeSfx)
         {
             idleTexture = idle;
             walkTexture = walk;
             jumpTexture = jump;
             attackTexture = attack;
+            dodgeTexture = dodge;
 
             idleAnimation = idleAnim;
             walkAnimation = walkAnim;
             jumpAnimation = jumpAnim;
             attackAnimation = attackAnim;
+            dodgeAnimation = dodgeAnim;
 
             animationManager = new AnimationManager(idleAnimation);
             currentTexture = idleTexture;
@@ -80,6 +96,7 @@ namespace Trabalho_Pratico_2
             attackSound = attackSfx;
             jumpSound = jumpSfx;
             hurtSound = hurtSfx;
+            dodgeSound = dodgeSfx;
         }
 
         private void UpdateHitbox()
@@ -97,27 +114,42 @@ namespace Trabalho_Pratico_2
         {
             Vector2 input = Vector2.Zero;
 
-            if (keyboardState.IsKeyDown(Keys.Left))
-                input.X -= 1;
-            if (keyboardState.IsKeyDown(Keys.Right))
-                input.X += 1;
+            // Atualiza cooldown da esquiva
+            if (dodgeCooldownTimer > 0)
+            {
+                dodgeCooldownTimer -= gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
+
+            // Input de movimento (apenas se não estiver esquivando)
+            if (!isDodging)
+            {
+                if (keyboardState.IsKeyDown(Keys.Left))
+                    input.X -= 1;
+                if (keyboardState.IsKeyDown(Keys.Right))
+                    input.X += 1;
+
+                if (input != Vector2.Zero)
+                {
+                    Position += Vector2.Normalize(input) * speed;
+                    facingRight = input.X > 0;
+                }
+            }
 
             bool jumpPressed = keyboardState.IsKeyDown(Keys.Up);
 
-            if (input != Vector2.Zero)
+            // Esquiva (tecla X)
+            if (!isDodging && !isAttacking && keyboardState.IsKeyDown(Keys.X) && dodgeCooldownTimer <= 0)
             {
-                Position += Vector2.Normalize(input) * speed;
-                facingRight = input.X > 0;
+                StartDodge();
             }
 
-            if (!isAttacking && keyboardState.IsKeyDown(Keys.Z))
+            // Ataque
+            if (!isAttacking && !isDodging && keyboardState.IsKeyDown(Keys.Z))
             {
                 isAttacking = true;
                 attackTimer = 0;
                 animationManager.SetAnimation(attackAnimation);
                 currentTexture = attackTexture;
-
-                // Toca o som de ataque
                 attackSound?.Play();
             }
 
@@ -131,7 +163,30 @@ namespace Trabalho_Pratico_2
 
             bool canJump = isOnGround || onElevator;
 
-            if (isAttacking)
+            // Lógica da esquiva
+            if (isDodging)
+            {
+                dodgeTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                // Movimento da esquiva
+                float progress = (float)(dodgeTimer / dodgeDuration);
+                if (progress <= 1f)
+                {
+                    Vector2 targetPosition = dodgeStartPosition + dodgeDirection * dodgeDistance;
+                    Position = Vector2.Lerp(dodgeStartPosition, targetPosition, progress);
+                }
+
+                animationManager.Update(new GameTime(gameTime.TotalGameTime,
+                    TimeSpan.FromMilliseconds(gameTime.ElapsedGameTime.TotalMilliseconds * 2.0)));
+
+                if (dodgeTimer >= dodgeDuration || animationManager.HasFinished())
+                {
+                    isDodging = false;
+                    dodgeCooldownTimer = dodgeCooldown;
+                }
+            }
+            // Lógica do ataque
+            else if (isAttacking)
             {
                 attackTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
                 int spriteWidth = 300;
@@ -165,96 +220,105 @@ namespace Trabalho_Pratico_2
 
             UpdateHitbox();
 
-            if (elevator != null)
+            // Resto da lógica de física (apenas se não estiver esquivando)
+            if (!isDodging)
             {
-                Rectangle elevatorHitbox = elevator.Hitbox;
-                Rectangle playerFeet = new Rectangle(Hitbox.X, Hitbox.Bottom, Hitbox.Width, 5);
-
-                if (playerFeet.Intersects(elevatorHitbox) && Velocity.Y >= 0)
+                // Lógica do elevador
+                if (elevator != null)
                 {
-                    float previousElevatorY = elevator.PreviousY;
-                    float deltaY = elevator.Position.Y - previousElevatorY;
+                    Rectangle elevatorHitbox = elevator.Hitbox;
+                    Rectangle playerFeet = new Rectangle(Hitbox.X, Hitbox.Bottom, Hitbox.Width, 5);
 
-                    Position.Y += deltaY;
-                    UpdateHitbox();
-
-                    int correction = Hitbox.Bottom - elevatorHitbox.Top;
-                    if (correction > 0)
+                    if (playerFeet.Intersects(elevatorHitbox) && Velocity.Y >= 0)
                     {
-                        Position.Y -= correction;
-                    }
+                        float previousElevatorY = elevator.PreviousY;
+                        float deltaY = elevator.Position.Y - previousElevatorY;
 
-                    Velocity.Y = 0;
-                    isOnGround = true;
-                    isJumping = false;
-                }
-            }
+                        Position.Y += deltaY;
+                        UpdateHitbox();
 
-            if (!onElevator)
-            {
-                Velocity.Y += gravity;
-                float remainingMovement = Velocity.Y;
-
-                while (remainingMovement != 0)
-                {
-                    float step = Math.Sign(remainingMovement) * Math.Min(2f, Math.Abs(remainingMovement));
-
-                    Position.Y += step;
-                    UpdateHitbox();
-
-                    bool collidedWithFloor = false;
-                    foreach (int floorY in floorLevels)
-                    {
-                        if (Hitbox.Bottom >= floorY && Hitbox.Bottom <= floorY + 20 && Velocity.Y >= 0)
+                        int correction = Hitbox.Bottom - elevatorHitbox.Top;
+                        if (correction > 0)
                         {
-                            Position.Y -= Hitbox.Bottom - floorY;
-                            Velocity.Y = 0;
-                            isOnGround = true;
-                            isJumping = false;
-                            UpdateHitbox();
-                            collidedWithFloor = true;
-                            break;
+                            Position.Y -= correction;
                         }
+
+                        Velocity.Y = 0;
+                        isOnGround = true;
+                        isJumping = false;
                     }
+                }
 
-                    if (collidedWithFloor)
+                // Gravidade e colisão com chão
+                if (!onElevator)
+                {
+                    Velocity.Y += gravity;
+                    float remainingMovement = Velocity.Y;
+
+                    while (remainingMovement != 0)
+                    {
+                        float step = Math.Sign(remainingMovement) * Math.Min(2f, Math.Abs(remainingMovement));
+
+                        Position.Y += step;
+                        UpdateHitbox();
+
+                        bool collidedWithFloor = false;
+                        foreach (int floorY in floorLevels)
+                        {
+                            if (Hitbox.Bottom >= floorY && Hitbox.Bottom <= floorY + 20 && Velocity.Y >= 0)
+                            {
+                                Position.Y -= Hitbox.Bottom - floorY;
+                                Velocity.Y = 0;
+                                isOnGround = true;
+                                isJumping = false;
+                                UpdateHitbox();
+                                collidedWithFloor = true;
+                                break;
+                            }
+                        }
+
+                        if (collidedWithFloor)
+                            break;
+
+                        remainingMovement -= step;
+                    }
+                }
+
+                UpdateHitbox();
+
+                // Colisão com plataformas
+                foreach (var platform in platforms)
+                {
+                    if (Hitbox.Intersects(platform.LeftWall))
+                    {
+                        Position.X += platform.LeftWall.Right - Hitbox.Left;
+                        UpdateHitbox();
+                    }
+                    else if (Hitbox.Intersects(platform.RightWall))
+                    {
+                        Position.X -= Hitbox.Right - platform.RightWall.Left;
+                        UpdateHitbox();
+                    }
+                }
+
+                // Verificação final do chão
+                isOnGround = false;
+                foreach (int floorY in floorLevels)
+                {
+                    if (Hitbox.Bottom >= floorY && Hitbox.Bottom <= floorY + 20 && Velocity.Y >= 0)
+                    {
+                        Position.Y -= Hitbox.Bottom - floorY;
+                        Velocity.Y = 0;
+                        isOnGround = true;
+                        isJumping = false;
+                        UpdateHitbox();
                         break;
-
-                    remainingMovement -= step;
+                    }
                 }
             }
 
-            UpdateHitbox();
-
-            foreach (var platform in platforms)
-            {
-                if (Hitbox.Intersects(platform.LeftWall))
-                {
-                    Position.X += platform.LeftWall.Right - Hitbox.Left;
-                    UpdateHitbox();
-                }
-                else if (Hitbox.Intersects(platform.RightWall))
-                {
-                    Position.X -= Hitbox.Right - platform.RightWall.Left;
-                    UpdateHitbox();
-                }
-            }
-
-            isOnGround = false;
-            foreach (int floorY in floorLevels)
-            {
-                if (Hitbox.Bottom >= floorY && Hitbox.Bottom <= floorY + 20 && Velocity.Y >= 0)
-                {
-                    Position.Y -= Hitbox.Bottom - floorY;
-                    Velocity.Y = 0;
-                    isOnGround = true;
-                    isJumping = false;
-                    UpdateHitbox();
-                    break;
-                }
-            }
-
-            if (!isAttacking)
+            // Animações (apenas se não estiver esquivando)
+            if (!isAttacking && !isDodging)
             {
                 if (isJumping)
                 {
@@ -288,15 +352,37 @@ namespace Trabalho_Pratico_2
                 }
             }
 
-            Position += knockbackVelocity;
-            knockbackVelocity *= knockbackFriction;
-            if (knockbackVelocity.Length() < 0.1f)
-                knockbackVelocity = Vector2.Zero;
+            // Knockback (apenas se não estiver esquivando)
+            if (!isDodging)
+            {
+                Position += knockbackVelocity;
+                knockbackVelocity *= knockbackFriction;
+                if (knockbackVelocity.Length() < 0.1f)
+                    knockbackVelocity = Vector2.Zero;
+            }
+        }
+
+        private void StartDodge()
+        {
+            isDodging = true;
+            dodgeTimer = 0;
+            dodgeStartPosition = Position;
+
+            // Direção da esquiva baseada na direção que o jogador está olhando
+            dodgeDirection = facingRight ? Vector2.UnitX : -Vector2.UnitX;
+
+            // Configura animação da esquiva
+            animationManager.SetAnimation(dodgeAnimation);
+            currentTexture = dodgeTexture;
+
+            // Toca som da esquiva
+            dodgeSound?.Play();
         }
 
         public void TakeDamage(Vector2 attackerPosition, float force)
         {
-            if (isDamaged) return;
+            // Se estiver esquivando, é invulnerável
+            if (isDamaged || isDodging) return;
 
             health--;
             if (health < 0) health = 0;
@@ -320,26 +406,52 @@ namespace Trabalho_Pratico_2
             knockbackVelocity = direction * force;
         }
 
-        public void Draw(SpriteBatch spriteBatch, SpriteEffects effects, Texture2D pixel)
+        public void Draw(SpriteBatch spriteBatch, SpriteEffects effects, Texture2D pixel, Texture2D playerDodgeTexture)
         {
             Color drawColor = isDamaged && (int)(damageTimer / 100) % 2 == 1
                 ? Color.Transparent
                 : Color.White;
 
-            spriteBatch.Draw(
-                currentTexture,
-                new Rectangle((int)Position.X, (int)Position.Y, 300, 300),
-                animationManager.GetFrame(),
-                drawColor,
-                0f,
-                Vector2.Zero,
-                effects,
-                0f
-            );
+            Rectangle currentFrame = animationManager.GetFrame();
+            Vector2 origin = new Vector2(currentFrame.Width / 2f, currentFrame.Height / 2f);
+            Vector2 hitboxCenter = new Vector2(Hitbox.X + Hitbox.Width / 2, Hitbox.Y + Hitbox.Height / 2);
 
-            //spriteBatch.Draw(pixel, Hitbox, Color.Blue * 0.4f);
+            if (isDodging)
+            {
+                Vector2 dodgeOrigin = new Vector2(playerDodgeTexture.Width / 2f, playerDodgeTexture.Height / 2f);
 
-            /**if (AttackHitbox != Rectangle.Empty)
+                spriteBatch.Draw(
+                    playerDodgeTexture,
+                    hitboxCenter,
+                    currentFrame,
+                    Color.White * 0.7f,
+                    0f,
+                    dodgeOrigin,
+                    1f,
+                    effects,
+                    0f
+                );
+            }
+            else
+            {
+                spriteBatch.Draw(
+                    currentTexture,
+                    hitboxCenter,
+                    currentFrame,
+                    drawColor,
+                    0f,
+                    origin,
+                    1f,
+                    effects,
+                    0f
+                );
+            }
+
+            // Desenha hitbox visual para debug
+           /* Color hitboxColor = isDodging ? Color.Green * 0.4f : Color.Blue * 0.4f;
+            spriteBatch.Draw(pixel, Hitbox, hitboxColor);*/
+
+            /*if (AttackHitbox != Rectangle.Empty)
             {
                 spriteBatch.Draw(pixel, AttackHitbox, Color.Red * 0.5f);
             }*/

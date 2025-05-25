@@ -16,8 +16,8 @@ namespace Trabalho_Pratico_2
         private Texture2D backgroundTexture;
         private Texture2D pixel;
 
-        private Animation idleAnimation, walkAnimation, jumpAnimation, attackAnimation;
-        private Texture2D skellyIdleTexture, skellyWalkTexture, skellyJumpTexture, skellyAttackTexture;
+        private Animation idleAnimation, walkAnimation, jumpAnimation, attackAnimation, playerDodgeAnimation;
+        private Texture2D skellyIdleTexture, skellyWalkTexture, skellyJumpTexture, skellyAttackTexture, playerDodgeTexture;
 
         private Player player;
         private Vector2 cameraPosition;
@@ -51,6 +51,7 @@ namespace Trabalho_Pratico_2
         private SoundEffect enemyHurtSound;
         private SoundEffect batHurtSound;
         private SoundEffect hurtSfx;
+        private SoundEffect playerDodgeSound;
 
         public Game1()
         {
@@ -91,6 +92,9 @@ namespace Trabalho_Pratico_2
             enemyHurtSound = Content.Load<SoundEffect>("Sound/hurt");
             batHurtSound = Content.Load<SoundEffect>("Sound/hurt");
             hurtSfx = Content.Load<SoundEffect>("Sound/player-hurt");
+            playerDodgeTexture = Content.Load<Texture2D>("dash");
+            playerDodgeSound = Content.Load<SoundEffect>("Sound/Dash Sound Effect");
+            
 
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = 0.3f;
@@ -127,6 +131,7 @@ namespace Trabalho_Pratico_2
 
             Vector2 frameSize = new Vector2(450, 300);
             Vector2 frameSize2 = new Vector2(500, 500);
+           
 
             idleAnimation = new Animation(11, 3, frameSize);
             walkAnimation = new Animation(19, 4, frameSize);
@@ -135,12 +140,27 @@ namespace Trabalho_Pratico_2
             batAnimation = new Animation(5, 2, new Vector2(400, 400));
             slimeAnimation = new Animation(20, 5, frameSize2);
             slimeBossAnimation = new Animation(7, 3, frameSize2); // mesma divisão que o slime normal
+            playerDodgeAnimation = new Animation(1, 1, frameSize);
 
             player = new Player(
-                skellyIdleTexture, skellyWalkTexture, skellyJumpTexture, skellyAttackTexture,
-                idleAnimation, walkAnimation, jumpAnimation, attackAnimation,
-                groundLevel, new Vector2(50, 2600), attackSound, jumpSound, hurtSfx
-            );
+                 skellyIdleTexture,
+                 skellyWalkTexture,
+                 skellyJumpTexture,
+                 skellyAttackTexture,
+                 playerDodgeTexture,       // adiciona aqui
+                 idleAnimation,
+                 walkAnimation,
+                 jumpAnimation,
+                 attackAnimation,
+                 playerDodgeAnimation,     // adiciona aqui
+                 groundLevel,
+                 new Vector2(50, 2600),
+                 attackSound,
+                 jumpSound,
+                 hurtSfx,
+                 playerDodgeSound          // aqui passa o som do dodge
+             );
+
 
             for (int floorIndex = 0; floorIndex < floorLevels.Count; floorIndex++)
             {
@@ -281,7 +301,7 @@ namespace Trabalho_Pratico_2
             foreach (var elev in elevators)
                 elev.Draw(_spriteBatch, pixel);
 
-            player.Draw(_spriteBatch, player.FacingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally, pixel);
+            player.Draw(_spriteBatch, player.FacingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally, pixel, playerDodgeTexture);
 
             foreach (var enemy in enemies)
                 enemy.Draw(_spriteBatch, pixel);

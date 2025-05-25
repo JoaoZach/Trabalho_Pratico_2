@@ -37,6 +37,30 @@
 /processorParam:TextureFormat=Color
 /build:background2.jpg
 
+#begin dash.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:dash.png
+
+#begin image.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:image.png
+
 #begin Morcego feio.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -144,6 +168,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:slime enemy.png
+
+#begin Sound/Dash Sound Effect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Dash Sound Effect.wav
 
 #begin Sound/game-music-loop.mp3
 /importer:Mp3Importer

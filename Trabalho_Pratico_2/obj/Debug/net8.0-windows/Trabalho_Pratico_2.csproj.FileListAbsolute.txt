@@ -145,3 +145,6 @@ E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Vide
 E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Program.cs
 E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Room.cs
 E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\slime boss.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\image.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\Dash Sound Effect.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\dash.xnb
