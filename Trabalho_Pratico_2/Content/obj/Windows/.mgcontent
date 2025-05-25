@@ -13,6 +13,7 @@
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/skelly jump.png</File>
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/skelly walking.png</File>
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/skelly.png</File>
+    <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/slime boss.png</File>
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/slime enemy.png</File>
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/Sound/game-music-loop.mp3</File>
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/Sound/hurt.wav</File>
@@ -22,6 +23,7 @@
     <File>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/Sound/sword-sound.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

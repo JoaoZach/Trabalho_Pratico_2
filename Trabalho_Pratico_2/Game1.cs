@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media; // <- IMPORTANTE
+using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +27,7 @@ namespace Trabalho_Pratico_2
         private int worldWidth = 1280 * 2;
         private int worldHeight = 3200;
 
-        private List<int> floorLevels = new List<int> { 3050, 2150, 1200 };
+        private List<int> floorLevels = new List<int> { 3050, 2180, 1270 };
 
         private List<Platform> platforms = new List<Platform>();
         private List<Elevator> elevators = new List<Elevator>();
@@ -40,13 +40,18 @@ namespace Trabalho_Pratico_2
         private Animation batAnimation;
         private List<BatEnemy> bats = new List<BatEnemy>();
 
-        private Song backgroundMusic; // <- Adicionado
+        private Texture2D slimeBossTexture;
+        private Animation slimeBossAnimation;
+        private SlimeBoss slimeBoss;
+
+        private Song backgroundMusic;
         private SoundEffect attackSound;
         private SoundEffect enemyDeathSound;
         private SoundEffect batDeathSound;
         private SoundEffect enemyHurtSound;
         private SoundEffect batHurtSound;
         private SoundEffect hurtSfx;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -76,19 +81,20 @@ namespace Trabalho_Pratico_2
             skellyAttackTexture = Content.Load<Texture2D>("skelly attack 1");
             slimeTexture = Content.Load<Texture2D>("slime enemy");
             batTexture = Content.Load<Texture2D>("Morcego feio");
+            slimeBossTexture = Content.Load<Texture2D>("slime boss");
 
-            backgroundMusic = Content.Load<Song>("Sound/game-music-loop"); // <- Carrega música
-            attackSound = Content.Load<SoundEffect>("Sound/sword-sound"); // Ajuste o caminho conforme necessário
+            backgroundMusic = Content.Load<Song>("Sound/game-music-loop");
+            attackSound = Content.Load<SoundEffect>("Sound/sword-sound");
             enemyDeathSound = Content.Load<SoundEffect>("Sound/monster-death-grunt");
             batDeathSound = Content.Load<SoundEffect>("Sound/monster-death-grunt");
-            SoundEffect jumpSound = Content.Load<SoundEffect>("Sound/jump"); // ajuste o caminho para o seu arquivo
+            SoundEffect jumpSound = Content.Load<SoundEffect>("Sound/jump");
             enemyHurtSound = Content.Load<SoundEffect>("Sound/hurt");
             batHurtSound = Content.Load<SoundEffect>("Sound/hurt");
             hurtSfx = Content.Load<SoundEffect>("Sound/player-hurt");
 
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = 0.3f; // volume entre 0.0 e 1.0
-            MediaPlayer.Play(backgroundMusic); // <- Toca música
+            MediaPlayer.Volume = 0.3f;
+            MediaPlayer.Play(backgroundMusic);
 
             pixel = new Texture2D(GraphicsDevice, 1, 1);
             pixel.SetData(new[] { Color.White });
@@ -128,28 +134,48 @@ namespace Trabalho_Pratico_2
             attackAnimation = new Animation(12, 3, frameSize, isLooping: false);
             batAnimation = new Animation(5, 2, new Vector2(400, 400));
             slimeAnimation = new Animation(20, 5, frameSize2);
+            slimeBossAnimation = new Animation(7, 3, frameSize2); // mesma divisão que o slime normal
 
             player = new Player(
                 skellyIdleTexture, skellyWalkTexture, skellyJumpTexture, skellyAttackTexture,
                 idleAnimation, walkAnimation, jumpAnimation, attackAnimation,
-                groundLevel, new Vector2(50, 2600), attackSound, jumpSound, hurtSfx  // <- Passa o som aqui
+                groundLevel, new Vector2(50, 2600), attackSound, jumpSound, hurtSfx
             );
 
-
-            foreach (int floorY in floorLevels)
+            for (int floorIndex = 0; floorIndex < floorLevels.Count; floorIndex++)
             {
+                int floorY = floorLevels[floorIndex];
                 float enemyY = floorY - 500;
-                for (int i = 0; i < 3; i++)
-                {
-                    float enemyX = 300 + i * 500;
-                    enemies.Add(new Enemy(slimeTexture, new Vector2(enemyX, enemyY), slimeAnimation, floorY, platforms, enemyDeathSound, enemyHurtSound));
 
-                    float batY = enemyY - 300;
-                    var bat = new BatEnemy(batTexture, new Vector2(enemyX, batY), batAnimation, batDeathSound, batHurtSound);
-                    bat.SetPlatforms(platforms);
-                    bats.Add(bat);
+                // Apenas adiciona inimigos comuns e morcegos nos dois primeiros andares
+                if (floorIndex < 2)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        float enemyX = 300 + i * 500;
+                        enemies.Add(new Enemy(slimeTexture, new Vector2(enemyX, enemyY), slimeAnimation, floorY, platforms, enemyDeathSound, enemyHurtSound));
+
+                        float batY = enemyY - 300;
+                        var bat = new BatEnemy(batTexture, new Vector2(enemyX, batY), batAnimation, batDeathSound, batHurtSound);
+                        bat.SetPlatforms(platforms);
+                        bats.Add(bat);
+                    }
+                }
+                else if (floorIndex == 2) // Criação do SlimeBoss no 3º andar
+                {
+                    slimeBoss = new SlimeBoss(
+                        slimeBossTexture,
+                        new Vector2(worldWidth / 2, floorLevels[2] - 500),
+                        slimeBossAnimation,
+                        floorLevels[2],      // groundLevel
+                        platforms,           // lista de plataformas
+                        enemyDeathSound,     // deathSound
+                        enemyHurtSound       // hurtSound
+                    );
                 }
             }
+
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -189,14 +215,10 @@ namespace Trabalho_Pratico_2
                 enemy.Update(gameTime, player.Position);
 
                 if (enemy.IsAlive && enemy.Hitbox.Intersects(player.Hitbox))
-                {
                     player.TakeDamage(enemy.Position, 50f);
-                }
 
                 if (enemy.IsAlive && player.AttackHitbox.Intersects(enemy.Hitbox))
-                {
                     enemy.TakeDamage(player.Position, 30f);
-                }
             }
 
             foreach (var bat in bats.ToList())
@@ -204,15 +226,29 @@ namespace Trabalho_Pratico_2
                 bat.Update(gameTime, player.Position);
 
                 if (bat.IsAlive && bat.Hitbox.Intersects(player.Hitbox))
-                {
                     player.TakeDamage(bat.Position, 30f);
-                }
 
                 if (bat.IsAlive && player.AttackHitbox.Intersects(bat.Hitbox))
-                {
                     bat.TakeDamage(player.Position, 30f);
-                }
             }
+
+            if (slimeBoss.IsAlive)
+            {
+                slimeBoss.Update(gameTime, player.Position);
+
+                if (slimeBoss.IsAlive && slimeBoss.Hitbox.Intersects(player.Hitbox))
+                    player.TakeDamage(slimeBoss.Position, 60f);
+
+                if (slimeBoss.IsAlive && player.AttackHitbox.Intersects(slimeBoss.Hitbox))
+                    slimeBoss.TakeDamage(player.Position, 40f);
+            }
+
+            // Se o SlimeBoss morreu, termina o jogo
+            if (!slimeBoss.IsAlive)
+            {
+                Exit();
+            }
+
 
             player.Position = new Vector2(
                 MathHelper.Clamp(player.Position.X, 0, worldWidth - 300),
@@ -220,9 +256,7 @@ namespace Trabalho_Pratico_2
             );
 
             foreach (var elev in elevators)
-            {
                 elev.Update(gameTime);
-            }
 
             Elevator currentElevator = elevators.FirstOrDefault(e => player.Hitbox.Bottom >= e.Position.Y && player.Hitbox.Intersects(e.Hitbox));
 
@@ -239,11 +273,7 @@ namespace Trabalho_Pratico_2
 
             _spriteBatch.Begin(transformMatrix: transform, samplerState: SamplerState.PointClamp);
 
-            _spriteBatch.Draw(
-                backgroundTexture,
-                new Rectangle(0, 0, worldWidth, worldHeight),
-                Color.White
-            );
+            _spriteBatch.Draw(backgroundTexture, new Rectangle(0, 0, worldWidth, worldHeight), Color.White);
 
             foreach (var platform in platforms)
                 platform.Draw(_spriteBatch, pixel);
@@ -259,6 +289,9 @@ namespace Trabalho_Pratico_2
             foreach (var bat in bats)
                 bat.Draw(_spriteBatch, pixel);
 
+            if (slimeBoss.IsAlive)
+                slimeBoss.Draw(_spriteBatch, pixel);
+
             _spriteBatch.End();
 
             _spriteBatch.Begin();
@@ -267,11 +300,7 @@ namespace Trabalho_Pratico_2
             int padding = 10;
             for (int i = 0; i < player.Health; i++)
             {
-                _spriteBatch.Draw(
-                    pixel,
-                    new Rectangle(padding + i * (lifeIconSize + padding), padding, lifeIconSize, lifeIconSize),
-                    Color.Red
-                );
+                _spriteBatch.Draw(pixel, new Rectangle(padding + i * (lifeIconSize + padding), padding, lifeIconSize, lifeIconSize), Color.Red);
             }
 
             _spriteBatch.End();

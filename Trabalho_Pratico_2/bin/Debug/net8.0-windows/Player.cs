@@ -13,11 +13,11 @@ namespace Trabalho_Pratico_2
         public Vector2 Velocity;
         private float speed = 8f;
         private float gravity = 0.5f;
-        private float jumpStrength = -16f;
+        private float jumpStrength = -18f;
         private bool isOnGround = false;
         private bool isJumping = false;
         private bool facingRight = true;
-        private int maxHealth = 3;
+        private int maxHealth = 4;
 
         private Texture2D idleTexture;
         private Texture2D walkTexture;

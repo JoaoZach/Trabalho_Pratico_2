@@ -155,7 +155,7 @@ namespace Trabalho_Pratico_2
 
             spriteBatch.Draw(
                 Texture,
-                new Vector2(Position.X + spriteSize / 2, Position.Y + spriteSize / 2),
+                new Vector2(Position.X + spriteSize / 2, Position.Y + spriteSize / 2 + 30),
                 animationManager.GetFrame(),
                 drawColor,
                 0f,
