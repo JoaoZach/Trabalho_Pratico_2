@@ -34,6 +34,10 @@ namespace Trabalho_Pratico_2
         private Animation slimeAnimation;
         private List<Enemy> enemies = new List<Enemy>();
 
+        private Texture2D batTexture;
+        private Animation batAnimation;
+        private List<BatEnemy> bats = new List<BatEnemy>();
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -62,6 +66,7 @@ namespace Trabalho_Pratico_2
             skellyJumpTexture = Content.Load<Texture2D>("skelly jump");
             skellyAttackTexture = Content.Load<Texture2D>("skelly attack 1");
             slimeTexture = Content.Load<Texture2D>("slime enemy");
+            batTexture = Content.Load<Texture2D>("Morcego feio");
 
             pixel = new Texture2D(GraphicsDevice, 1, 1);
             pixel.SetData(new[] { Color.White });
@@ -69,25 +74,23 @@ namespace Trabalho_Pratico_2
             Vector2 elevatorSize = new Vector2(200, 20);
             int elevatorMargin = 50;
 
-            for (int i = 0; i < 2; i++) // Só cria os dois primeiros elevadores
+            for (int i = 0; i < 2; i++)
             {
                 int floorY = floorLevels[i];
                 float y = floorY - elevatorSize.Y;
 
                 float x = (i == 1)
-                    ? elevatorMargin                         // segundo elevador: início da sala (esquerda)
-                    : worldWidth - elevatorSize.X - elevatorMargin; // primeiro elevador: fundo da sala (direita)
+                    ? elevatorMargin
+                    : worldWidth - elevatorSize.X - elevatorMargin;
 
                 elevators.Add(new Elevator(
                     new Vector2(x, y),
                     elevatorSize,
-                    2f,
+                    5f,
                     y - 800,
                     y + 50
                 ));
             }
-
-
 
             foreach (int y in floorLevels)
             {
@@ -101,24 +104,29 @@ namespace Trabalho_Pratico_2
             walkAnimation = new Animation(19, 4, frameSize);
             jumpAnimation = new Animation(20, 4, frameSize, isLooping: false);
             attackAnimation = new Animation(12, 3, frameSize, isLooping: false);
-
+            batAnimation = new Animation(5, 2, new Vector2(400, 400));
             slimeAnimation = new Animation(20, 5, frameSize2);
 
             player = new Player(skellyIdleTexture, skellyWalkTexture, skellyJumpTexture, skellyAttackTexture,
                 idleAnimation, walkAnimation, jumpAnimation, attackAnimation,
-                groundLevel, new Vector2(300, 2600));
+                groundLevel, new Vector2(50, 2600));
 
             // Adiciona inimigos distribuídos em vários andares
             foreach (int floorY in floorLevels)
             {
-                float enemyY = floorY - 500; // 500 é a altura da sprite do inimigo
+                float enemyY = floorY - 500; // Altura da sprite do slime
                 for (int i = 0; i < 3; i++)
                 {
-                    float enemyX = 300 + i * 500; // Distribui horizontalmente
+                    float enemyX = 300 + i * 500;
                     enemies.Add(new Enemy(slimeTexture, new Vector2(enemyX, enemyY), slimeAnimation, floorY, platforms));
+
+                    // Adiciona morcego acima do slime no mesmo ponto, mas mais alto para simular voo
+                    float batY = enemyY - 300;
+                    var bat = new BatEnemy(batTexture, new Vector2(enemyX, batY), batAnimation);
+                    bat.SetPlatforms(platforms); // permite verificar visão
+                    bats.Add(bat);
                 }
             }
-
         }
 
         protected override void Update(GameTime gameTime)
@@ -126,13 +134,32 @@ namespace Trabalho_Pratico_2
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (player.IsDead)
+            {
+                Exit();
+                return;
+            }
+
             KeyboardState keyboardState = Keyboard.GetState();
 
-            cameraPosition = Vector2.Lerp(
-                cameraPosition,
-                player.Position - new Vector2(_graphics.PreferredBackBufferWidth / 2 - 150, _graphics.PreferredBackBufferHeight / 2 - 150),
-                cameraFollowSpeed
+            Vector2 targetCameraPosition = player.Position - new Vector2(
+                _graphics.PreferredBackBufferWidth / 2 - 150,
+                _graphics.PreferredBackBufferHeight / 2 - 150
             );
+
+            targetCameraPosition.X = MathHelper.Clamp(
+                targetCameraPosition.X,
+                0,
+                worldWidth - _graphics.PreferredBackBufferWidth
+            );
+
+            targetCameraPosition.Y = MathHelper.Clamp(
+                targetCameraPosition.Y,
+                0,
+                worldHeight - _graphics.PreferredBackBufferHeight
+            );
+
+            cameraPosition = Vector2.Lerp(cameraPosition, targetCameraPosition, cameraFollowSpeed);
 
             foreach (var enemy in enemies.ToList())
             {
@@ -146,6 +173,21 @@ namespace Trabalho_Pratico_2
                 if (enemy.IsAlive && player.AttackHitbox.Intersects(enemy.Hitbox))
                 {
                     enemy.TakeDamage(player.Position, 30f);
+                }
+            }
+
+            foreach (var bat in bats.ToList())
+            {
+                bat.Update(gameTime, player.Position);
+
+                if (bat.IsAlive && bat.Hitbox.Intersects(player.Hitbox))
+                {
+                    player.TakeDamage(bat.Position, 30f);
+                }
+
+                if (bat.IsAlive && player.AttackHitbox.Intersects(bat.Hitbox))
+                {
+                    bat.TakeDamage(player.Position, 30f);
                 }
             }
 
@@ -181,20 +223,33 @@ namespace Trabalho_Pratico_2
             );
 
             foreach (var platform in platforms)
-            {
                 platform.Draw(_spriteBatch, pixel);
-            }
 
             foreach (var elev in elevators)
-            {
                 elev.Draw(_spriteBatch, pixel);
-            }
 
             player.Draw(_spriteBatch, player.FacingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally, pixel);
 
             foreach (var enemy in enemies)
-            {
                 enemy.Draw(_spriteBatch, pixel);
+
+            foreach (var bat in bats)
+                bat.Draw(_spriteBatch, pixel);
+
+            _spriteBatch.End();
+
+            // HUD de vidas
+            _spriteBatch.Begin();
+
+            int lifeIconSize = 30;
+            int padding = 10;
+            for (int i = 0; i < player.Health; i++)
+            {
+                _spriteBatch.Draw(
+                    pixel,
+                    new Rectangle(padding + i * (lifeIconSize + padding), padding, lifeIconSize, lifeIconSize),
+                    Color.Red
+                );
             }
 
             _spriteBatch.End();

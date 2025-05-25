@@ -47,6 +47,9 @@ namespace Trabalho_Pratico_2
         private bool isAttacking = false;
         private double attackTimer = 0;
         private double attackDuration = 600;
+        public int Health => health;
+        public int MaxHealth => maxHealth;
+        public bool IsDead => health <= 0;
 
         public Player(Texture2D idle, Texture2D walk, Texture2D jump, Texture2D attack,
                       Animation idleAnim, Animation walkAnim, Animation jumpAnim, Animation attackAnim,
@@ -74,7 +77,7 @@ namespace Trabalho_Pratico_2
             int spriteW = 300;
             int spriteH = 300;
             int hitboxW = 120;
-            int hitboxH = 180;
+            int hitboxH = 140;
             int centerX = (int)Position.X + spriteW / 2;
             int centerY = (int)Position.Y + spriteH / 2;
             Hitbox = new Rectangle(centerX - hitboxW / 2, centerY - hitboxH / 2, hitboxW, hitboxH);
@@ -181,8 +184,41 @@ namespace Trabalho_Pratico_2
             if (!onElevator)
             {
                 Velocity.Y += gravity;
-                Position.Y += Velocity.Y;
+                float remainingMovement = Velocity.Y;
+
+                while (remainingMovement != 0)
+                {
+                    float step = Math.Sign(remainingMovement) * Math.Min(2f, Math.Abs(remainingMovement));
+
+                    Position.Y += step;
+                    UpdateHitbox();
+
+                    bool collidedWithFloor = false;
+                    foreach (int floorY in floorLevels)
+                    {
+                        if (Hitbox.Bottom >= floorY && Hitbox.Bottom <= floorY + 20 && Velocity.Y >= 0)
+                        {
+                            // Ajusta para ficar exatamente em cima do chão
+                            Position.Y -= Hitbox.Bottom - floorY;
+                            Velocity.Y = 0;
+                            isOnGround = true;
+                            isJumping = false;
+                            UpdateHitbox();
+                            collidedWithFloor = true;
+                            break;
+                        }
+                    }
+
+                    if (collidedWithFloor)
+                    {
+                        break;
+                    }
+
+                    remainingMovement -= step;
+                }
             }
+
+
 
             UpdateHitbox();
 

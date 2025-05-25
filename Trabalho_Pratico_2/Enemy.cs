@@ -24,9 +24,9 @@ namespace Trabalho_Pratico_2
         private const int spriteSize = 500;
 
         private int direction = 1; // 1 = direita, -1 = esquerda
-        private float moveSpeed = 1.2f;
+        private float moveSpeed = 0.6f;
 
-        private int health = 2;
+        private int health = 3;
         private Vector2 knockbackVelocity = Vector2.Zero;
         private float knockbackFriction = 0.9f;
 
@@ -110,7 +110,7 @@ namespace Trabalho_Pratico_2
 
         private void UpdateHitbox()
         {
-            int width = 320;
+            int width = 280;
             int height = 180;
             int centerX = (int)Position.X + spriteSize / 2;
             int centerY = (int)Position.Y + spriteSize / 2;
