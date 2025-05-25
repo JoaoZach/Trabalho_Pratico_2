@@ -104,3 +104,43 @@ E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Vide
 E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\obj\Debug\net8.0-windows\ref\Trabalho_Pratico_2.dll
 E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\background2.xnb
 E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Morcego feio.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\game-music-loop.wma
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\game-music-loop.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\sword-sound.wma
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\sword-sound.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\monster-death-grunt.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\jump.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\hurt.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\player-hurt.xnb
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\game-music-loop.mp3
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\hurt.wav
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\jump.wav
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\monster-death-grunt.wav
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\player-hurt.wav
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Sound\sword-sound.wav
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\background.jpg
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\background2.jpg
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Morcego feio.piskel
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Morcego feio.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Pilha moedas background.piskel
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly attack 1.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly attack 2.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly attack 3.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly idol.piskel
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly jump.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly walking.piskel
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly walking.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly.piskel
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\skelly.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\Slime enemy.piskel
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Content\slime enemy.png
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Animation.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\AnimationManager.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\BatEnemy.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Elevator.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Enemy.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Game1.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Platform.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Player.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Program.cs
+E:\IPCA 2024-2025\1º Ano\2º Semestre\02 - Técnicas de Desenvolvimento de Videojogos\Trabalho_Pratico_2\Trabalho_Pratico_2\bin\Debug\net8.0-windows\Room.cs

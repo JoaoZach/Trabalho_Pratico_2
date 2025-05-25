@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/Sound/game-music-loop.mp3</SourceFile>
+  <SourceTime>2025-05-25T12:16:12.6273834+01:00</SourceTime>
+  <DestFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/bin/Windows/Sound/game-music-loop.xnb</DestFile>
+  <DestTime>2025-05-25T12:18:01.7139559+01:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2025-04-05T11:10:54+01:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2025-04-05T11:10:54+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/bin/Windows/Sound/game-music-loop.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

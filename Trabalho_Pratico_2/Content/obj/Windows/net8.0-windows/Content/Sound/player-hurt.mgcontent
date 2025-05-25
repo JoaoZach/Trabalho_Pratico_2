@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/Sound/player-hurt.wav</SourceFile>
+  <SourceTime>2025-05-25T14:55:35.9972678+01:00</SourceTime>
+  <DestFile>E:/IPCA 2024-2025/1º Ano/2º Semestre/02 - Técnicas de Desenvolvimento de Videojogos/Trabalho_Pratico_2/Trabalho_Pratico_2/Content/bin/Windows/Content/Sound/player-hurt.xnb</DestFile>
+  <DestTime>2025-05-25T15:04:25.3166353+01:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2025-04-05T11:10:54+01:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2025-04-05T11:10:54+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
