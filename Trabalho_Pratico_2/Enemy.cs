@@ -125,10 +125,9 @@ namespace Trabalho_Pratico_2
 
         public void TakeDamage(Vector2 attackerPosition, float force)
         {
-            if (!IsAlive) return;
+            if (!IsAlive || isDamaged) return;
 
-            if (!isDamaged)
-            {
+           
                 isDamaged = true;
                 damageTimer = 0;
                 health--;
@@ -144,7 +143,7 @@ namespace Trabalho_Pratico_2
                     IsAlive = false;
                     deathSound?.Play();
                 }
-            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch, Texture2D pixel)
@@ -152,6 +151,7 @@ namespace Trabalho_Pratico_2
             if (!IsAlive) return;
 
             Color drawColor = isDamaged ? Color.Red : baseColor;
+
 
             spriteBatch.Draw(
                 Texture,
