@@ -18,9 +18,7 @@ namespace Trabalho_Pratico_2
 
         public void Draw(SpriteBatch spriteBatch, Texture2D pixel)
         {
-            spriteBatch.Draw(pixel, Floor, Color.DarkGreen * 0.6f);
-            spriteBatch.Draw(pixel, LeftWall, Color.SaddleBrown * 0.6f);
-            spriteBatch.Draw(pixel, RightWall, Color.SaddleBrown * 0.6f);
+           
         }
     }
 }

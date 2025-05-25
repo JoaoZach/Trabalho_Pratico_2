@@ -176,6 +176,6 @@ public class SlimeBoss
         );
 
         // Hitbox (visual)
-        spriteBatch.Draw(pixel, Hitbox, Color.OrangeRed * 0.4f);
+        //spriteBatch.Draw(pixel, Hitbox, Color.OrangeRed * 0.4f);
     }
 }

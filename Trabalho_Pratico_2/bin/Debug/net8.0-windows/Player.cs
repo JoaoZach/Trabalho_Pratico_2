@@ -102,7 +102,7 @@ namespace Trabalho_Pratico_2
             if (keyboardState.IsKeyDown(Keys.Right))
                 input.X += 1;
 
-            bool jumpPressed = keyboardState.IsKeyDown(Keys.Space);
+            bool jumpPressed = keyboardState.IsKeyDown(Keys.Up);
 
             if (input != Vector2.Zero)
             {
@@ -337,12 +337,12 @@ namespace Trabalho_Pratico_2
                 0f
             );
 
-            spriteBatch.Draw(pixel, Hitbox, Color.Blue * 0.4f);
+            //spriteBatch.Draw(pixel, Hitbox, Color.Blue * 0.4f);
 
-            if (AttackHitbox != Rectangle.Empty)
+            /**if (AttackHitbox != Rectangle.Empty)
             {
                 spriteBatch.Draw(pixel, AttackHitbox, Color.Red * 0.5f);
-            }
+            }*/
         }
 
         public bool FacingRight => facingRight;

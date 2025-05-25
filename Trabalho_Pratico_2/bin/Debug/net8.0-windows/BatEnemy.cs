@@ -161,7 +161,7 @@ namespace Trabalho_Pratico_2
             );
 
             // Visualização da hitbox (opcional)
-            spriteBatch.Draw(pixel, Hitbox, Color.OrangeRed * 0.4f);
+            //spriteBatch.Draw(pixel, Hitbox, Color.OrangeRed * 0.4f);
         }
 
         // Permite injetar plataformas para detectar "visão"

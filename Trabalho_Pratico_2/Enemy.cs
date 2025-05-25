@@ -115,7 +115,7 @@ namespace Trabalho_Pratico_2
 
         private void UpdateHitbox()
         {
-            int width = 280;
+            int width = 220;
             int height = 180;
             int centerX = (int)Position.X + spriteSize / 2;
             int centerY = (int)Position.Y + spriteSize / 2;
@@ -166,7 +166,7 @@ namespace Trabalho_Pratico_2
             );
 
             // Hitbox (visual)
-            spriteBatch.Draw(pixel, Hitbox, Color.Red * 0.4f);
+            //spriteBatch.Draw(pixel, Hitbox, Color.Red * 0.4f);
         }
     }
 }
