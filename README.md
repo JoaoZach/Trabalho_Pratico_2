@@ -43,7 +43,6 @@ Tecla	Ação
 ← →	Movimento horizontal
 ↑	Pular
 Z	Atacar
-X 	Dash
 ESC	Sair do jogo
 🏗️ Estrutura do Projeto
 Trabalho_Pratico_2/
